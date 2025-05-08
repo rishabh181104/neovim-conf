@@ -8,10 +8,12 @@ opt.cursorline = true
 opt.showmode = false
 
 -- Indentation
-opt.tabstop = 2
-opt.shiftwidth = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
 opt.expandtab = true
 opt.smartindent = true
+opt.autoindent = true
 
 -- Search
 opt.ignorecase = true
@@ -26,6 +28,23 @@ opt.timeoutlen = 500
 opt.splitbelow = true
 opt.splitright = true
 
+-- ThePrimeagen sets
+opt.wrap = false
+
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
+
+opt.hlsearch = false
+opt.incsearch = true
+
+opt.scrolloff = 8
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
+
+opt.updatetime = 50
+
 -- Keymaps
 local map = vim.keymap.set
 map("n", "<leader>w", ":write<CR>", { desc = "Save file" })
@@ -38,3 +57,4 @@ map("x", "jk", "<C-c>", { desc = "Toogle to normal mode"})
 map("c", "jk", "<C-c>", { desc = "Toogle to normal mode"})
 map("t", "jk", "<C-c>", { desc = "Toogle to normal mode"})
 map("o", "jk", "<C-c>", { desc = "Toogle to normal mode"})
+map("n", "<leader>ter", ":terminal<CR>", { desc = "Opens a terminal"})
